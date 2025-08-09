@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HireFlow CRM</title>
+  <meta name="theme-color" content="#2563eb" />
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">HireFlow</div>
+    <nav class="nav">
+      <a href="#/dashboard" class="nav-link">Дашборд</a>
+      <a href="#/kanban" class="nav-link">Канбан</a>
+      <a href="#/candidates" class="nav-link">Список</a>
+      <a href="#/clients" class="nav-link">Заказчики</a>
+      <a href="#/reports" class="nav-link">Отчёты</a>
+    </nav>
+  </header>
+
+  <main id="app" class="container"></main>
+
+  <footer class="footer">© 2025 HireFlow — минималистичная CRM для рекрутинга</footer>
+
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(()=>{});
+      });
+    }
+  </script>
+</body>
+</html>
